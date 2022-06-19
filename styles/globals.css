@@ -1,16 +1,22 @@
-html,
+* {
+  box-sizing: border-box;
+}
+
 body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  margin: 0px;
+  font-family: "Inter", sans-serif;
+}
+
+:root {
+  --gray-100: #c1c1c1;
+  --blue: #62aeff;
+  --celeste: #b4e9f3;
+}
+
+li {
+  list-style: none;
 }
 
 a {
-  color: inherit;
   text-decoration: none;
-}
-
-* {
-  box-sizing: border-box;
 }
