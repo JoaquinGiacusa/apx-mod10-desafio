@@ -1,8 +1,13 @@
+import { MainLayout } from "components/layout/main-layout";
 import { useRouter } from "next/router";
 
 export default function SearchPage() {
   const router = useRouter();
-  const query = router.query.q;
+  const { query } = router;
 
-  return <div>resultados de buscar: {query}</div>;
+  return (
+    <MainLayout>
+      <div>{query?.q}</div>
+    </MainLayout>
+  );
 }

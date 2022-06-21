@@ -8,9 +8,10 @@ body {
 }
 
 :root {
-  --gray-100: #c1c1c1;
+  --gray: #c1c1c1;
   --blue: #62aeff;
   --celeste: #b4e9f3;
+  --rose: #e75a7c;
 }
 
 li {

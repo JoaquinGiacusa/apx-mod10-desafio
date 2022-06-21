@@ -1,13 +1,11 @@
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { InputWhite } from "ui/textfield";
+import { HeaderInput, InputWhite } from "ui/textfield";
 import { PrimaryButton, SecondaryButton } from "ui/button";
 import { FormBase } from "./styled";
 
-export function SearchItem({}) {
-  // const [search, setSearch] = useState("");
-
+export function SearcherHeader({}) {
   const router = useRouter();
   const {
     register,
@@ -20,20 +18,16 @@ export function SearchItem({}) {
     router.push("/search?q=" + data.search);
   }
 
-  // const name = watch("nombre");
-  // if (name?.length > 3) {
-  //   console.log("tiene muchas letras");
-  // }
-
   return (
     <FormBase onSubmit={handleSubmit(submitHandler)}>
-      <InputWhite
+      <HeaderInput
         placeholder="Encontrá tu producto ideal..."
         type="text"
         {...register("search", { required: true })}
       />
-
-      <PrimaryButton text="Buscar" />
+      <div className="buton-search-container">
+        <SecondaryButton text="Buscar" />
+      </div>
     </FormBase>
   );
 }

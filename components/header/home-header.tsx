@@ -6,11 +6,9 @@ import { CloseIcon } from "ui/icons";
 import { LinkStyled } from "./styled";
 import Link from "next/link";
 import { LogStatus } from "ui/logStatus";
-import { SearchItem } from "components/seracher";
 import { LoginHeader } from "./login-header";
-import { SearcherHeader } from "./seracher-header";
 
-export function MainHeader() {
+export function HomeHeader() {
   const [open, setOpen] = useState(false);
 
   function handleClickBurger() {
@@ -29,9 +27,6 @@ export function MainHeader() {
       </div>
       <div className="login-header-comp">
         <LoginHeader></LoginHeader>
-      </div>
-      <div className={"search-item-container"}>
-        <SearcherHeader></SearcherHeader>
       </div>
       {open && (
         <NavContainer>

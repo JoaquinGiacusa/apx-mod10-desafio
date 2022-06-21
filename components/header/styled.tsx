@@ -4,14 +4,51 @@ import { CompraloLogo } from "ui/icons";
 import { MenuBurger } from "ui/icons";
 
 export const Root = styled.header`
-  height: 5em;
   width: 100%;
   background-color: #000;
   padding: 1em;
-  display: flex;
+  /* display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center; */
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: 3em auto auto;
   align-items: center;
+
+  .search-item-container {
+    grid-column: 1/4;
+    justify-self: center;
+    width: 100%;
+  }
+  .menu-burger-container {
+    display: grid;
+    grid-column: 3;
+    justify-self: end;
+    align-items: center;
+  }
+
+  .login-header-comp {
+    display: none;
+  }
+
+  @media (min-width: 769px) {
+    .login-header-comp {
+      display: inherit;
+      display: grid;
+      grid-column: 3;
+      justify-self: end;
+      align-items: center;
+    }
+    .menu-burger-container {
+      display: none;
+    }
+
+    .search-item-container {
+      grid-column: 2/3;
+      grid-row: 1;
+    }
+  }
 `;
 
 export const NavContainer = styled.nav`
@@ -24,6 +61,7 @@ export const NavContainer = styled.nav`
   background-color: #000;
   display: flex;
   flex-direction: column;
+  z-index: 2;
 
   .closeIcon-container {
     display: flex;
@@ -48,7 +86,7 @@ export const NavContainer = styled.nav`
   }
 `;
 
-export const LinkA = styled.a`
+export const LinkStyled = styled.a`
   text-decoration: none;
   color: white;
   font-size: 2.2em;

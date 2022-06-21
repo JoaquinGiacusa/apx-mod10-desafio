@@ -1,26 +1,29 @@
 import { SubTitle } from "ui/text";
 import { Root } from "./styled";
 import { Card } from "ui/card";
+import { useFeaturedProducts } from "lib/hooks";
 
 export function FeaturedProds() {
+  const products = useFeaturedProducts();
+
   return (
     <Root>
       <div className="title-container">
         <SubTitle>Productos destacados</SubTitle>
       </div>
       <div className="cards-container">
-        <Card
-          name="ventilador de techo"
-          price={3421}
-          imageURL="https://www.65ymas.com/uploads/s1/75/76/13/bigstock-square-decorative-wood-beam-wi-371581240.jpeg"
-          imageDescription="el mejor venilador"
-        ></Card>
-        <Card
-          name="ventilador de techo"
-          price={3421}
-          imageURL="https://www.65ymas.com/uploads/s1/75/76/13/bigstock-square-decorative-wood-beam-wi-371581240.jpeg"
-          imageDescription="el mejor venilador"
-        ></Card>
+        {products?.results.map((p: any) => {
+          console.log(p);
+          return (
+            <Card
+              key={p.objectID}
+              name={p.Name}
+              price={p["Unit cost"]}
+              imageURL={p.Images[0].url}
+              imageDescription={p.Description}
+            ></Card>
+          );
+        })}
       </div>
     </Root>
   );

@@ -6,10 +6,19 @@ export const FormBase = styled.form`
   align-items: center;
   gap: 0.5em;
   max-width: 30em;
-  padding: 1em;
-  margin: 2em auto;
+  margin: 0 auto;
+  margin-top: 1em;
+
+  .buton-search-container {
+    width: 100%;
+  }
 
   @media (min-width: 769px) {
-    /* flex-direction: row; */
+    flex-direction: row;
+    margin: 0 auto;
+
+    .buton-search-container {
+      width: 8em;
+    }
   }
 `;

@@ -30,7 +30,7 @@ export function Footer() {
           <ul className={"redes-container"}>
             <h3 className={"redes-title"}>Redes</h3>
             <li>
-              <Link href="#">
+              <Link href="/">
                 <a className={"link-redes"}>
                   <InstaLogo></InstaLogo>
                   <span>My e-commerce</span>
@@ -38,7 +38,7 @@ export function Footer() {
               </Link>
             </li>
             <li>
-              <Link href="#">
+              <Link href="/">
                 <a className={"link-redes"}>
                   <TwitterLogo></TwitterLogo>
                   <span>My e-commerce</span>

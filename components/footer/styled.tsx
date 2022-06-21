@@ -1,7 +1,4 @@
-import Link from "next/link";
 import styled from "styled-components";
-import { InstaLogo } from "ui/icons";
-import { TwitterLogo } from "ui/icons";
 
 export const Root = styled.footer`
   height: 30em;
@@ -51,9 +48,4 @@ export const Root = styled.footer`
       flex-direction: column-reverse;
     }
   }
-`;
-
-export const StyledLink = styled.a`
-  color: white;
-  /* text-align: center; */
 `;

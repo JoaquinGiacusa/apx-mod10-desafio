@@ -6,7 +6,7 @@ type PrimatyButtonProps = {
 
 export const BaseButton = styled.button`
   font-size: 1.2em;
-  width: 15em;
+  width: 100%;
   margin: 0px;
   color: black;
   cursor: pointer;
@@ -14,6 +14,7 @@ export const BaseButton = styled.button`
   background-color: var(--blue);
   border: 2px solid var(--blue);
   border-radius: 5px;
+
   :hover {
     border: 2px solid black;
   }
@@ -23,6 +24,11 @@ export function PrimaryButton({ text }: PrimatyButtonProps) {
   return <BaseButton>{text}</BaseButton>;
 }
 
-export const SecondaryButton = styled(BaseButton)`
-  background: palevioletred;
+export const SecondaryBtnStyles = styled(BaseButton)`
+  background: #ffc700;
+  border: 2px solid #ffc700;
 `;
+
+export function SecondaryButton({ text }: PrimatyButtonProps) {
+  return <SecondaryBtnStyles>{text}</SecondaryBtnStyles>;
+}
