@@ -7,8 +7,9 @@ import { LinkStyled } from "./styled";
 import Link from "next/link";
 import { LogStatus } from "ui/logStatus";
 import { SearchItem } from "components/seracher";
-import { LoginHeader } from "./login-header";
-import { SearcherHeader } from "./seracher-header";
+import { LoginHeader } from "./login-header-comp";
+import { SearcherHeader } from "./seracher-header-comp";
+import Image from "next/image";
 
 export function MainHeader() {
   const [open, setOpen] = useState(false);
@@ -23,7 +24,11 @@ export function MainHeader() {
   }
   return (
     <Root>
-      <CompraloLogo></CompraloLogo>
+      <Link href={"/"}>
+        <a>
+          <CompraloLogo />
+        </a>
+      </Link>
       <div className="menu-burger-container">
         <MenuBurger onClick={handleClickBurger}></MenuBurger>
       </div>

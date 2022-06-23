@@ -6,7 +6,7 @@ import { CloseIcon } from "ui/icons";
 import { LinkStyled } from "./styled";
 import Link from "next/link";
 import { LogStatus } from "ui/logStatus";
-import { LoginHeader } from "./login-header";
+import { LoginHeader } from "./login-header-comp";
 
 export function HomeHeader() {
   const [open, setOpen] = useState(false);
@@ -21,7 +21,11 @@ export function HomeHeader() {
   }
   return (
     <Root>
-      <CompraloLogo></CompraloLogo>
+      <Link href={"/"}>
+        <a>
+          <CompraloLogo />
+        </a>
+      </Link>
       <div className="menu-burger-container">
         <MenuBurger onClick={handleClickBurger}></MenuBurger>
       </div>

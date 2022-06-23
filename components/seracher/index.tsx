@@ -5,7 +5,7 @@ import { InputWhite } from "ui/textfield";
 import { PrimaryButton, SecondaryButton } from "ui/button";
 import { FormBase } from "./styled";
 
-export function SearchItem({}) {
+export function SearchItem() {
   // const [search, setSearch] = useState("");
 
   const router = useRouter();
@@ -17,7 +17,7 @@ export function SearchItem({}) {
   } = useForm();
 
   function submitHandler(data: any) {
-    router.push("/search?q=" + data.search);
+    router.push("/search?q=" + data.search + "&limit=0&offset=0");
   }
 
   // const name = watch("nombre");

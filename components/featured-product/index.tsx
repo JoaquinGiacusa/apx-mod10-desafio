@@ -3,8 +3,9 @@ import { Root } from "./styled";
 import { Card } from "ui/card";
 import { useFeaturedProducts } from "lib/hooks";
 
-export function FeaturedProds() {
-  const products = useFeaturedProducts();
+export function FeaturedProds(data: any) {
+  // const products = useFeaturedProducts();
+  // console.log("xd", data);
 
   return (
     <Root>
@@ -12,8 +13,8 @@ export function FeaturedProds() {
         <SubTitle>Productos destacados</SubTitle>
       </div>
       <div className="cards-container">
-        {products?.results.map((p: any) => {
-          console.log(p);
+        {data?.products?.results.map((p: any) => {
+          // console.log(p);
           return (
             <Card
               key={p.objectID}

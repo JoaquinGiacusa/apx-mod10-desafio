@@ -37,4 +37,5 @@ export const Large = styled.p`
 
 export const LargeBolt = styled(Large)`
   font-weight: bold;
+  /* text-align: center; */
 `;

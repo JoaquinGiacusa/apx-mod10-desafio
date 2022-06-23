@@ -54,3 +54,15 @@ export function saveToken(token: string) {
 export function getSaveToken() {
   return localStorage.getItem("auth_token");
 }
+
+export async function fetchAPIFromServer(input: RequestInfo) {
+  const url = BASE_URL + input;
+
+  const res = await fetch(url);
+
+  if (res.status >= 200 || res.status < 300) {
+    return res.json();
+  } else {
+    throw { message: "Hubo un error", status: res.status };
+  }
+}

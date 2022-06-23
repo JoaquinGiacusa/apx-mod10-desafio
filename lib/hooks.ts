@@ -2,9 +2,14 @@ import useSWR from "swr";
 import useSWRImmutable from "swr/immutable";
 import { fetchAPI } from "./api";
 
-export function useSerachResult(query: any) {
-  //   const { data } = useSWR(() => "/search?q=" + query,fetchAPI);
-  //   return data;
+export function useSerachResult(query: any, offset: any, limit: any) {
+  const { data } = useSWR(
+    () => "/search?q=" + query + "&limit=" + limit + "&offset=" + offset,
+    fetchAPI
+  );
+  console.log("222", limit);
+
+  return data;
 }
 
 // export function useMe() {
