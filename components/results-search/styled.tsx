@@ -62,6 +62,6 @@ export const NavegationButton = styled.button`
   background-color: white;
 
   :hover {
-    border: white;
+    border: solid 2px white;
   }
 `;
