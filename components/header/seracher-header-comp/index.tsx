@@ -15,7 +15,7 @@ export function SearcherHeader({}) {
   } = useForm();
 
   function submitHandler(data: any) {
-    router.push("/search?q=" + data.search + "&limit=5&offset=0");
+    router.push("/search?q=" + data.search);
   }
 
   return (

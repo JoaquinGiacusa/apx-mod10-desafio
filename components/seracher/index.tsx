@@ -17,7 +17,7 @@ export function SearchItem() {
   } = useForm();
 
   function submitHandler(data: any) {
-    router.push("/search?q=" + data.search + "&limit=0&offset=0");
+    router.push("/search?q=" + data.search + "&limit=4&offset=0");
   }
 
   // const name = watch("nombre");

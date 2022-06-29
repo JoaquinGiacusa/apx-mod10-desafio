@@ -19,3 +19,20 @@ export default function SearchPage() {
     </MainLayout>
   );
 }
+
+// export async function getServerSideProps(context: any) {
+//   // const productId = context.params.id;
+//   // const data = await pullData(productId as string);
+//   // const data = await pullData("1" as string);
+//   // const products = useFeaturedProducts();
+//   // const BASE_URL = "https://desafio-modulo-9.vercel.app/api";
+
+//   // const res = await fetch(BASE_URL + "/search?q=&limit=3&offset=10");
+//   // const products = await res.json();
+
+//   const products = await fetchAPIFromServer("/search?q=&limit=3&offset=10");
+//   // console.log("products2", products2);
+
+//   return {
+//     props: { products }, // will be passed to the page component as props
+//   };

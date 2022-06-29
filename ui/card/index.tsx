@@ -54,7 +54,15 @@ export function Card({
             textAlign: "start",
           }}
         >
-          <Large>{name}</Large>
+          <Large
+            style={{
+              whiteSpace: "nowrap",
+              overflow: "hidden",
+              textOverflow: "ellipsis",
+            }}
+          >
+            {name}
+          </Large>
           <LargeBolt style={{ margin: "0", color: "black" }}>
             ${price}
           </LargeBolt>
