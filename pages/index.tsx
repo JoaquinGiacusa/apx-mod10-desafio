@@ -6,12 +6,11 @@ import { TitlePage, Large } from "ui/text";
 import { TextField } from "ui/textfield";
 import { CompraloLogo } from "ui/icons";
 import { useRouter } from "next/router";
-import { HomeLayout } from "components/layout/home-layout";
+import { MainLayout } from "components/layout/main-layout";
 import { HomePage } from "components/home-page";
 import { SearchItem } from "components/seracher";
 import { FeaturedProds } from "components/featured-product";
-import { MainLayout } from "components/layout/main-layout";
-import { useFeaturedProducts } from "lib/hooks";
+
 import { fetchAPI, fetchAPIFromServer } from "lib/api";
 
 const Home: NextPage = (data: any) => {
@@ -28,13 +27,13 @@ const Home: NextPage = (data: any) => {
           content="Mi E-commerce creado con Next.js y React.js para dar fin al modulo 10 de la carrera de APX"
         ></meta>
       </Head>
-      <HomeLayout>
+      <MainLayout>
         <TitlePage>
           El mejor <br></br> e-commerce
         </TitlePage>
         <SearchItem></SearchItem>
         <FeaturedProds products={data.products}></FeaturedProds>
-      </HomeLayout>
+      </MainLayout>
     </div>
   );
 };

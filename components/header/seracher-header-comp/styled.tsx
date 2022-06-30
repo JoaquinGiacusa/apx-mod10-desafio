@@ -13,6 +13,10 @@ export const FormBase = styled.form`
     width: 100%;
   }
 
+  .mobile {
+    margin: 100px;
+  }
+
   @media (min-width: 769px) {
     flex-direction: row;
     margin: 0 auto;
@@ -22,3 +26,7 @@ export const FormBase = styled.form`
     }
   }
 `;
+
+// export function SearcherHeader({}){
+//   return <FormBase style={{}}></FormBase>
+// }

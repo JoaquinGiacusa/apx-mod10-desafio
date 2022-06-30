@@ -29,6 +29,6 @@ export const SecondaryBtnStyles = styled(BaseButton)`
   border: 2px solid #ffc700;
 `;
 
-export function SecondaryButton({ text }: PrimatyButtonProps) {
-  return <SecondaryBtnStyles>{text}</SecondaryBtnStyles>;
+export function SecondaryButton({ text, className }: any) {
+  return <SecondaryBtnStyles className={className}>{text}</SecondaryBtnStyles>;
 }

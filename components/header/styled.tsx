@@ -2,6 +2,7 @@ import Link from "next/link";
 import styled from "styled-components";
 import { CompraloLogo } from "ui/icons";
 import { MenuBurger } from "ui/icons";
+import { BaseButton } from "ui/button";
 
 export const Root = styled.header`
   width: 100%;
@@ -98,3 +99,17 @@ export const LinkStyled = styled.a`
     border-radius: 30px;
   }
 `;
+
+export const HeaderButtonStyles = styled(BaseButton)`
+  background: var(--rose);
+  border: 2px solid var(--rose);
+  width: 9em;
+`;
+
+export function HeaderButton({ text }: any) {
+  return <HeaderButtonStyles>{text}</HeaderButtonStyles>;
+}
+
+export function LoginHeader() {
+  return <HeaderButton text="Ingresar"></HeaderButton>;
+}

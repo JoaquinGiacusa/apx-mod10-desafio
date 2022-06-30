@@ -16,22 +16,23 @@ export async function fetchAPI(input: RequestInfo, options?: any) {
   }
 
   if (newOptions.body) {
+    newOptions.headers = { ["Content-Type"]: "application/json" };
     newOptions.body = JSON.stringify(newOptions.body);
   }
 
   const res = await fetch(url, newOptions);
 
   if (res.status >= 200 || res.status < 300) {
-    return res.json();
+    return await res.json();
   } else {
     throw { message: "Hubo un error", status: res.status };
   }
 }
 
-export async function auth(email: string, code: string) {
-  fetchAPI("/auth", {});
-  return true;
-}
+// export async function auth(email: string, code: string) {
+//   fetchAPI("/auth", {});
+//   return true;
+// }
 
 export async function sendCode(email: string) {
   return fetchAPI("/auth", { method: "POST", body: { email } });
@@ -42,7 +43,6 @@ export async function getToken(email: string, code: string) {
     method: "POST",
     body: { email, code },
   });
-
   saveToken(data.token);
   return true;
 }

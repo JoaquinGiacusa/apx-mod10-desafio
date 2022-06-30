@@ -11,7 +11,7 @@ export function Footer() {
         <nav>
           <ul>
             <li>
-              <Link href={"/"}>Ingresar</Link>
+              <Link href={"/signin"}>Ingresar</Link>
             </li>
             <li>
               <Link href={"/"}>Mi perfil</Link>

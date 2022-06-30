@@ -1,8 +1,7 @@
 import { useRouter } from "next/router";
-import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { HeaderInput, InputWhite } from "ui/textfield";
-import { PrimaryButton, SecondaryButton } from "ui/button";
+import { HeaderInput } from "ui/textfield";
+import { SecondaryButton } from "ui/button";
 import { FormBase } from "./styled";
 
 export function SearcherHeader({}) {
@@ -18,8 +17,13 @@ export function SearcherHeader({}) {
     router.push("/search?q=" + data.search);
   }
 
+  const mobile = true;
+
   return (
-    <FormBase onSubmit={handleSubmit(submitHandler)}>
+    <FormBase
+      className={mobile ? "mobile" : "noMobile"}
+      onSubmit={handleSubmit(submitHandler)}
+    >
       <HeaderInput
         placeholder="Encontrá tu producto ideal..."
         type="text"

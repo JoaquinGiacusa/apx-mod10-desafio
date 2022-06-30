@@ -6,7 +6,7 @@ export const TitlePage = styled.h1`
 `;
 
 export const Tiny = styled.p`
-  font-size: 0.67em;
+  font-size: 0.9em;
 `;
 
 export const SubTitle = styled.h2`

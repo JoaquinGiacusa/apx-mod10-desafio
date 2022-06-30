@@ -3,15 +3,17 @@ import { Root, NavContainer } from "./styled";
 import { CompraloLogo } from "ui/icons";
 import { MenuBurger } from "ui/icons";
 import { CloseIcon } from "ui/icons";
-import { LinkStyled } from "./styled";
+import { LinkStyled, LoginHeader } from "./styled";
 import Link from "next/link";
 import { LogStatus } from "ui/logStatus";
-import { SearchItem } from "components/seracher";
-import { LoginHeader } from "./login-header-comp";
-import { SearcherHeader } from "./seracher-header-comp";
-import Image from "next/image";
 
-export function MainHeader() {
+import { SearcherHeader } from "./seracher-header-comp";
+
+type MainHeaderProps = {
+  searcher: boolean;
+};
+
+export function MainHeader({ searcher }: MainHeaderProps) {
   const [open, setOpen] = useState(false);
 
   function handleClickBurger() {
@@ -35,9 +37,11 @@ export function MainHeader() {
       <div className="login-header-comp">
         <LoginHeader></LoginHeader>
       </div>
-      <div className={"search-item-container"}>
-        <SearcherHeader></SearcherHeader>
-      </div>
+      {searcher && (
+        <div className={"search-item-container"}>
+          <SearcherHeader></SearcherHeader>
+        </div>
+      )}
       {open && (
         <NavContainer>
           <div className={"closeIcon-container"}>

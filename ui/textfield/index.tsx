@@ -15,19 +15,15 @@ export const HeaderInput = styled(InputWhite)`
   color: black;
 `;
 
-// export function InputTheme() {
-//   return theme == "white" ? <InputWhite /> : <InputBlack />;
-// }
-
 export const Label = styled(Tiny)`
   margin-bottom: 5px;
 `;
 
 export function TextField({ label, placeholder = "completar..." }: any) {
   return (
-    <label>
+    <div>
       <Label>{label}</Label>
       <InputWhite placeholder={placeholder}></InputWhite>
-    </label>
+    </div>
   );
 }

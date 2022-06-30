@@ -3,6 +3,10 @@ import styled from "styled-components";
 export const Root = styled.section`
   margin: 2em 0;
   min-height: 420px;
+
+  .no-results {
+    text-align: center;
+  }
 `;
 
 export const ResultsContainer = styled.div`

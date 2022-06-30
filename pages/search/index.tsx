@@ -10,7 +10,7 @@ export default function SearchPage() {
   const offset = query.offset;
 
   return (
-    <MainLayout>
+    <MainLayout searcher={true}>
       <ResultSearchItems
         query={search}
         limit={limit}

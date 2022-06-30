@@ -62,7 +62,7 @@ export function ResultSearchItems({ query }: any) {
               </div>
             </ResultsContainer>
           ) : (
-            <LargeBolt>
+            <LargeBolt className="no-results">
               No hay publicaciones que coincidan con tu búsqueda.
             </LargeBolt>
           )}
