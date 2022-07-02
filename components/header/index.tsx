@@ -1,13 +1,15 @@
-import { useState } from "react";
-import { Root, NavContainer } from "./styled";
+import { useEffect, useState } from "react";
+import { Root, NavContainer, HeaderLoginButton } from "./styled";
 import { CompraloLogo } from "ui/icons";
 import { MenuBurger } from "ui/icons";
 import { CloseIcon } from "ui/icons";
-import { LinkStyled, LoginHeader } from "./styled";
+import { LinkStyled } from "./styled";
 import Link from "next/link";
 import { LogStatus } from "ui/logStatus";
-
 import { SearcherHeader } from "./seracher-header-comp";
+import { useMe } from "lib/hooks";
+import { useRouter } from "next/router";
+import { getSaveToken } from "lib/api";
 
 type MainHeaderProps = {
   searcher: boolean;
@@ -15,15 +17,41 @@ type MainHeaderProps = {
 
 export function MainHeader({ searcher }: MainHeaderProps) {
   const [open, setOpen] = useState(false);
+  const [email, setEmail] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const router = useRouter();
+  const token = getSaveToken();
+
+  if (token) {
+    const { data, isValidating } = useMe();
+
+    useEffect(() => {
+      setIsLoading(isValidating);
+      const email = data?.email;
+      setEmail(email);
+    }, [data, token]);
+  } else {
+    useEffect(() => {
+      setIsLoading(false);
+    }, [token]);
+  }
 
   function handleClickBurger() {
-    console.log("abrite");
     setOpen(true);
   }
 
   function handleClickCloseIcon() {
     setOpen(false);
   }
+
+  function handleLogin() {
+    router.push("/signin");
+  }
+
+  function handleLogout() {
+    router.push("/logout");
+  }
+
   return (
     <Root>
       <Link href={"/"}>
@@ -35,7 +63,19 @@ export function MainHeader({ searcher }: MainHeaderProps) {
         <MenuBurger onClick={handleClickBurger}></MenuBurger>
       </div>
       <div className="login-header-comp">
-        <LoginHeader></LoginHeader>
+        {isLoading ? (
+          <span></span>
+        ) : (
+          <div>
+            {email ? (
+              <span>{email}</span>
+            ) : (
+              <HeaderLoginButton onClick={handleLogin}>
+                Ingresar
+              </HeaderLoginButton>
+            )}
+          </div>
+        )}
       </div>
       {searcher && (
         <div className={"search-item-container"}>
@@ -49,7 +89,7 @@ export function MainHeader({ searcher }: MainHeaderProps) {
           </div>
           <ul className={"nav-menu"}>
             <li className={"nav-item"}>
-              <Link href={"/"}>
+              <Link href={"/signin"}>
                 <LinkStyled>Ingresar</LinkStyled>
               </Link>
             </li>
@@ -65,10 +105,7 @@ export function MainHeader({ searcher }: MainHeaderProps) {
             </li>
           </ul>
           <div className={"log-container"}>
-            <LogStatus
-              onClick={() => console.log("cerrar sesion")}
-              email={"giacusajoaquin.@gmail.com"}
-            />
+            {email && <LogStatus onClick={handleLogout} email={email} />}
           </div>
         </NavContainer>
       )}

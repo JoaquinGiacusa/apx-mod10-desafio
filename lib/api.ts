@@ -12,6 +12,7 @@ export async function fetchAPI(input: RequestInfo, options?: any) {
     //si tiene un valor queda como esta y sino le agrega un objeto vacio
     newOptions.headers ||= {};
     newOptions.headers.authorization = "bearer " + token;
+    // newOptions.headers = { ["Content-Type"]: "application/json" };
     newOptions.headers["Content-Type"] = "application/json";
   }
 
@@ -19,13 +20,15 @@ export async function fetchAPI(input: RequestInfo, options?: any) {
     newOptions.headers = { ["Content-Type"]: "application/json" };
     newOptions.body = JSON.stringify(newOptions.body);
   }
+  // console.log(newOptions);
 
   const res = await fetch(url, newOptions);
+  // console.log({ res });
 
   if (res.status >= 200 || res.status < 300) {
     return await res.json();
   } else {
-    throw { message: "Hubo un error", status: res.status };
+    return { message: "Hubo un error", status: res.status };
   }
 }
 
@@ -52,7 +55,16 @@ export function saveToken(token: string) {
 }
 
 export function getSaveToken() {
-  return localStorage.getItem("auth_token");
+  if (typeof window !== "undefined") {
+    return localStorage.getItem("auth_token");
+  } else {
+    false;
+  }
+}
+
+export function deleteSaveToken() {
+  localStorage.removeItem("auth_token");
+  return true;
 }
 
 export async function fetchAPIFromServer(input: RequestInfo) {

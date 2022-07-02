@@ -6,18 +6,13 @@ export const Root = styled.section`
   padding: 1em; */
 `;
 
-export const FormLogin = styled(FormBase)`
-  .label {
-    margin: 0;
-  }
-
+export const FormProfile = styled(FormBase)`
   .input {
     text-align: center;
   }
 
-  .text-msj {
-    margin: 0;
-    margin-bottom: 0.5em;
+  .button {
+    margin-top: 1em;
   }
 `;
 

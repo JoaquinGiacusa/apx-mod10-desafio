@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { InputWhite } from "ui/textfield";
 import { PrimaryButton, SecondaryButton } from "ui/button";
-import { FormBase } from "./styled";
+import { RootForm } from "./styled";
 
 export function SearchItem() {
   // const [search, setSearch] = useState("");
@@ -26,7 +26,7 @@ export function SearchItem() {
   // }
 
   return (
-    <FormBase onSubmit={handleSubmit(submitHandler)}>
+    <RootForm onSubmit={handleSubmit(submitHandler)}>
       <InputWhite
         placeholder="Encontrá tu producto ideal..."
         type="text"
@@ -34,6 +34,6 @@ export function SearchItem() {
       />
 
       <PrimaryButton text="Buscar" />
-    </FormBase>
+    </RootForm>
   );
 }

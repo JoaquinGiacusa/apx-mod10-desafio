@@ -8,10 +8,6 @@ export const Root = styled.header`
   width: 100%;
   background-color: #000;
   padding: 1em;
-  /* display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center; */
   display: grid;
   grid-template-columns: auto auto;
   grid-template-rows: 3em auto auto;
@@ -31,6 +27,7 @@ export const Root = styled.header`
 
   .login-header-comp {
     display: none;
+    color: var(--celeste);
   }
 
   @media (min-width: 769px) {
@@ -106,10 +103,6 @@ export const HeaderButtonStyles = styled(BaseButton)`
   width: 9em;
 `;
 
-export function HeaderButton({ text }: any) {
-  return <HeaderButtonStyles>{text}</HeaderButtonStyles>;
-}
-
-export function LoginHeader() {
-  return <HeaderButton text="Ingresar"></HeaderButton>;
+export function HeaderLoginButton({ onClick, children }: any) {
+  return <HeaderButtonStyles onClick={onClick}>{children}</HeaderButtonStyles>;
 }

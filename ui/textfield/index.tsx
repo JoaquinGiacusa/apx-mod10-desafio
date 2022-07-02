@@ -16,7 +16,8 @@ export const HeaderInput = styled(InputWhite)`
 `;
 
 export const Label = styled(Tiny)`
-  margin-bottom: 5px;
+  margin: 0;
+  width: 100%;
 `;
 
 export function TextField({ label, placeholder = "completar..." }: any) {

@@ -14,13 +14,13 @@ export function Footer() {
               <Link href={"/signin"}>Ingresar</Link>
             </li>
             <li>
-              <Link href={"/"}>Mi perfil</Link>
+              <Link href={"/profile"}>Mi perfil</Link>
             </li>
             <li>
               <Link href={"/"}>Buscar</Link>
             </li>
             <li>
-              <Link href={"/"}>Logout</Link>
+              <Link href={"/logout"}>Logout</Link>
             </li>
           </ul>
         </nav>

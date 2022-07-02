@@ -3,6 +3,7 @@ import useSWR from "swr";
 import useSWRImmutable from "swr/immutable";
 import useSWRInfinite from "swr/infinite";
 import { fetchAPI } from "./api";
+import { getSaveToken } from "./api";
 
 export function useSerachResult(query: any) {
   // const [isLoading, setIsLoading] = useState(true);
@@ -22,15 +23,15 @@ export function useSerachResult(query: any) {
 }
 
 export function useMe() {
-  const { data, error } = useSWR("/me", fetchAPI);
+  const { data, error, isValidating } = useSWR("/me", fetchAPI);
 
-  return data;
+  return { data, isValidating };
 }
 
-export function useMe2() {
-  const { data } = useSWR("/me2", () => "hola");
-  return data;
-}
+// export function useMe2() {
+//   const { data } = useSWR("/me2", () => "hola");
+//   return data;
+// }
 
 export function useProduct(id: string) {
   const { data, error } = useSWR("/products/" + id, fetchAPI);
