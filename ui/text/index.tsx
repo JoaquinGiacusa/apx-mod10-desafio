@@ -15,6 +15,11 @@ export const SubTitle = styled.h2`
 
 export const BodyText = styled.p``;
 
+export const PriceText = styled.span`
+  font-size: 1.8em;
+  font-weight: bold;
+`;
+
 // export const SectionTitle = styled(TitlePage)`
 //   margin: 30px;
 // `;

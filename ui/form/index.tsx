@@ -4,7 +4,7 @@ export const FormBase = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.5em;
+  gap: 1em;
   max-width: 30em;
   padding: 1em;
   margin: 2em auto;

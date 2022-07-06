@@ -12,6 +12,7 @@ export const ProductImage = styled.img`
 `;
 
 type CardPropTypes = {
+  onClick: () => void;
   name: string;
   price: number;
   imageURL: string;
@@ -37,13 +38,14 @@ const CardContainer = styled.div`
 `;
 
 export function Card({
+  onClick,
   name,
   price,
   imageURL,
   imageDescription = "descripcion de cada img",
 }: CardPropTypes) {
   return (
-    <CardContainer>
+    <CardContainer onClick={onClick}>
       <div>
         <ProductImage src={imageURL} alt={imageDescription} />
         <div

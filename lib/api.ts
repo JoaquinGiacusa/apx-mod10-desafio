@@ -7,25 +7,24 @@ export async function fetchAPI(input: RequestInfo, options?: any) {
   const token = getSaveToken();
 
   const newOptions: any = options || {};
-  if (token) {
-    // newOptions.headers = newOptions.headers || {}; lo mismo que abajo
-    //si tiene un valor queda como esta y sino le agrega un objeto vacio
-    newOptions.headers ||= {};
-    newOptions.headers.authorization = "bearer " + token;
-    // newOptions.headers = { ["Content-Type"]: "application/json" };
-    newOptions.headers["Content-Type"] = "application/json";
-  }
 
   if (newOptions.body) {
     newOptions.headers = { ["Content-Type"]: "application/json" };
     newOptions.body = JSON.stringify(newOptions.body);
   }
-  // console.log(newOptions);
+
+  if (token) {
+    // newOptions.headers = newOptions.headers || {}; lo mismo que abajo
+    //si tiene un valor queda como esta y sino le agrega un objeto vacio
+    newOptions.headers ||= {};
+    newOptions.headers["Authorization"] = "bearer " + token;
+    // newOptions.headers = { ["Content-Type"]: "application/json" };
+    newOptions.headers["Content-Type"] = "application/json";
+  }
 
   const res = await fetch(url, newOptions);
-  // console.log({ res });
 
-  if (res.status >= 200 || res.status < 300) {
+  if (res.status >= 200 && res.status < 300) {
     return await res.json();
   } else {
     return { message: "Hubo un error", status: res.status };
@@ -77,4 +76,12 @@ export async function fetchAPIFromServer(input: RequestInfo) {
   } else {
     throw { message: "Hubo un error", status: res.status };
   }
+}
+
+export function updateName(name: string, lastName: string) {
+  return fetchAPI("/me", { method: "PATCH", body: { name, lastName } });
+}
+
+export function updateAddress(address: string) {
+  return fetchAPI("/me/address", { method: "PATCH", body: { address } });
 }

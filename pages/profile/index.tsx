@@ -4,7 +4,7 @@ import { Profile } from "components/profile";
 export default function ProfilePage() {
   return (
     <MainLayout>
-      <Profile></Profile>;
+      <Profile></Profile>
     </MainLayout>
   );
 }

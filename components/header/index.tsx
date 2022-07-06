@@ -18,22 +18,17 @@ type MainHeaderProps = {
 export function MainHeader({ searcher }: MainHeaderProps) {
   const [open, setOpen] = useState(false);
   const [email, setEmail] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
+
   const router = useRouter();
   const token = getSaveToken();
 
   if (token) {
-    const { data, isValidating } = useMe();
+    const { data } = useMe();
 
     useEffect(() => {
-      setIsLoading(isValidating);
       const email = data?.email;
       setEmail(email);
     }, [data, token]);
-  } else {
-    useEffect(() => {
-      setIsLoading(false);
-    }, [token]);
   }
 
   function handleClickBurger() {
@@ -63,18 +58,10 @@ export function MainHeader({ searcher }: MainHeaderProps) {
         <MenuBurger onClick={handleClickBurger}></MenuBurger>
       </div>
       <div className="login-header-comp">
-        {isLoading ? (
-          <span></span>
+        {email ? (
+          <span>{email}</span>
         ) : (
-          <div>
-            {email ? (
-              <span>{email}</span>
-            ) : (
-              <HeaderLoginButton onClick={handleLogin}>
-                Ingresar
-              </HeaderLoginButton>
-            )}
-          </div>
+          <HeaderLoginButton onClick={handleLogin}>Ingresar</HeaderLoginButton>
         )}
       </div>
       {searcher && (

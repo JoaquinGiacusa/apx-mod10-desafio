@@ -32,3 +32,11 @@ export const SecondaryBtnStyles = styled(BaseButton)`
 export function SecondaryButton({ text, className }: any) {
   return <SecondaryBtnStyles className={className}>{text}</SecondaryBtnStyles>;
 }
+
+export function BuyButton({ children }: any) {
+  return (
+    <BaseButton style={{ maxWidth: "15em", fontSize: "1.5em" }}>
+      {children}
+    </BaseButton>
+  );
+}
