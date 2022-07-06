@@ -22,14 +22,14 @@ export function MainHeader({ searcher }: MainHeaderProps) {
   const router = useRouter();
   const token = getSaveToken();
 
-  if (token) {
-    const { data } = useMe();
+  // if (token) {
+  const { data } = useMe();
 
-    useEffect(() => {
-      const email = data?.email;
-      setEmail(email);
-    }, [data, token]);
-  }
+  useEffect(() => {
+    const email = data?.email;
+    setEmail(email);
+  }, [data, token]);
+  // }
 
   function handleClickBurger() {
     setOpen(true);
