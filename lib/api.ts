@@ -62,8 +62,12 @@ export function getSaveToken() {
 }
 
 export function deleteSaveToken() {
-  localStorage.removeItem("auth_token");
-  return true;
+  if (typeof window !== "undefined") {
+    localStorage.removeItem("auth_token");
+    return true;
+  } else {
+    false;
+  }
 }
 
 export async function fetchAPIFromServer(input: RequestInfo) {
