@@ -4,26 +4,18 @@ export const Root = styled.section`
   padding: 1em;
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
-
-  @media (min-width: 769px) {
-    margin: 5em;
-    flex-direction: row;
-  }
-
-  .image-container {
-    width: 100%;
-  }
+  justify-content: center;
+  align-items: center;
 
   .image-product {
-    margin: 0 auto;
     width: 100%;
-    max-width: 35em;
-    height: 15em;
+    max-width: 30em;
+    max-height: 20em;
   }
 
   .text-container {
-    max-width: 40em;
+    min-width: 15em;
+    max-width: 30em;
     display: flex;
     flex-direction: column;
   }
@@ -32,6 +24,24 @@ export const Root = styled.section`
     margin-bottom: 0.5em;
   }
 
-  .description {
+  @media (min-width: 900px) {
+    margin: 5em;
+    flex-direction: row;
+    align-items: flex-start;
+
+    .product-name {
+      margin: 0;
+    }
+
+    .price {
+      margin-top: 1em;
+    }
+
+    .image-product {
+      margin-right: 3em;
+      width: 100%;
+      max-width: 30em;
+      height: 500px;
+    }
   }
 `;

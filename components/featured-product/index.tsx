@@ -1,11 +1,10 @@
 import { SubTitle } from "ui/text";
 import { Root } from "./styled";
 import { Card } from "ui/card";
-import { useFeaturedProducts } from "lib/hooks";
+import { useRouter } from "next/router";
 
 export function FeaturedProds(data: any) {
-  // const products = useFeaturedProducts();
-  // console.log("xd", data);
+  const router = useRouter();
 
   return (
     <Root>
@@ -17,6 +16,9 @@ export function FeaturedProds(data: any) {
           // console.log(p);
           return (
             <Card
+              onClick={() => {
+                router.push("/item/" + p.objectID);
+              }}
               key={p.objectID}
               name={p.Name}
               price={p["Unit cost"]}

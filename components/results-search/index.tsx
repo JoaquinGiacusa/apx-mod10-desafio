@@ -37,7 +37,6 @@ export function ResultSearchItems({ query }: any) {
                 {products?.pagination.total}
               </LargeBolt>
               {products?.results.map((p: any) => {
-                // console.log(p);
                 return (
                   <Card
                     onClick={() => {

@@ -12,14 +12,14 @@ export function Item({ itemId }: any) {
 
   return (
     <Root>
-      <div className="image-container">
-        <img className="image-product" src={imageUrl}></img>
-      </div>
+      {/* <div className="image-container"> */}
+      <img className="image-product" src={imageUrl}></img>
+      {/* </div> */}
       <div className="text-container">
-        <SubTitle>{data?.Name}</SubTitle>
+        <SubTitle className="product-name">{data?.Name}</SubTitle>
         <PriceText className="price">${data?.["Unit cost"]}</PriceText>
         <BuyButton>Comprar</BuyButton>
-        <BodyText className="description">{data?.Description}</BodyText>
+        <BodyText>{data?.Description}</BodyText>
       </div>
     </Root>
   );

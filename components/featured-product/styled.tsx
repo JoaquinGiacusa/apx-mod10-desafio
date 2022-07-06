@@ -7,30 +7,32 @@ export const Root = styled.section`
   padding: 2em;
 
   .cards-container {
-    display: grid;
+    /* display: grid;
     gap: 30px;
-    width: 100%;
+    width: 100%; */
     /* margin: 0 auto; */
+    display: grid;
+    gap: 2em;
+    justify-content: center;
   }
 
   .title-container {
-    width: 20em;
     margin: 0 auto;
     text-align: center;
   }
 
   @media (min-width: 769px) {
     .cards-container {
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: auto auto;
     }
     .title-container {
       width: 40em;
     }
   }
 
-  @media (min-width: 969px) {
+  @media (min-width: 1200px) {
     .cards-container {
-      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-columns: auto auto auto auto;
     }
   }
 `;

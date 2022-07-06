@@ -56,7 +56,7 @@ export async function getServerSideProps(context: any) {
   // const res = await fetch(BASE_URL + "/search?q=&limit=3&offset=10");
   // const products = await res.json();
 
-  const products = await fetchAPIFromServer("/search?q=&limit=3&offset=10");
+  const products = await fetchAPIFromServer("/search?q=&limit=4&offset=10");
   // console.log("products2", products2);
 
   return {
