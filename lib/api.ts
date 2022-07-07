@@ -23,6 +23,7 @@ export async function fetchAPI(input: RequestInfo, options?: any) {
   }
 
   const res = await fetch(url, newOptions);
+  console.log(res.status);
 
   if (res.status >= 200 && res.status < 300) {
     return await res.json();
@@ -88,4 +89,11 @@ export function updateName(name: string, lastName: string) {
 
 export function updateAddress(address: string) {
   return fetchAPI("/me/address", { method: "PATCH", body: { address } });
+}
+
+export function CreateBuyOrder(productId: string) {
+  return fetchAPI("/order?productId=" + productId, {
+    method: "POST",
+    body: { color: "", shipping_address: "" },
+  });
 }

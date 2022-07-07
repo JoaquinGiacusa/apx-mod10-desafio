@@ -33,9 +33,12 @@ export function SecondaryButton({ text, className }: any) {
   return <SecondaryBtnStyles className={className}>{text}</SecondaryBtnStyles>;
 }
 
-export function BuyButton({ children }: any) {
+export function BuyButton({ children, onClick }: any) {
   return (
-    <BaseButton style={{ maxWidth: "15em", fontSize: "1.5em" }}>
+    <BaseButton
+      onClick={onClick}
+      style={{ maxWidth: "15em", fontSize: "1.5em" }}
+    >
       {children}
     </BaseButton>
   );
