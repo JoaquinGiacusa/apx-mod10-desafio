@@ -26,8 +26,12 @@ export function MainHeader({ searcher }: MainHeaderProps) {
   const { data } = useMe();
 
   useEffect(() => {
-    const email = data?.email;
-    setEmail(email);
+    if (!token) {
+      setEmail(null);
+    } else {
+      const email = data?.email;
+      setEmail(email);
+    }
   }, [data, token]);
   // }
 
@@ -81,7 +85,7 @@ export function MainHeader({ searcher }: MainHeaderProps) {
               </Link>
             </li>
             <li className={"nav-item"}>
-              <Link href={"/"}>
+              <Link href={"/profile"}>
                 <LinkStyled>Mi perfil</LinkStyled>
               </Link>
             </li>

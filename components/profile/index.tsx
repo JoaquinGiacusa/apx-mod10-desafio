@@ -4,10 +4,20 @@ import { useForm } from "react-hook-form";
 import { TitlePage } from "ui/text";
 import { useMe } from "lib/hooks";
 import { SecondaryButton } from "ui/button";
-import { useEffect, useState } from "react";
-import { updateName, updateAddress } from "lib/api";
+import { useEffect, useLayoutEffect, useState } from "react";
+import { updateName, updateAddress, getSaveToken } from "lib/api";
+import { useRouter } from "next/router";
 
 export function Profile() {
+  const router = useRouter();
+  const token = getSaveToken();
+
+  useLayoutEffect(() => {
+    if (!token) {
+      router.push("signin");
+    }
+  });
+
   const {
     register,
     handleSubmit,

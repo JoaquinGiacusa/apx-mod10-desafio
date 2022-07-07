@@ -46,8 +46,12 @@ export async function getToken(email: string, code: string) {
     method: "POST",
     body: { email, code },
   });
-  saveToken(data.token);
-  return true;
+  if (data.token) {
+    saveToken(data.token);
+    return true;
+  } else {
+    return false;
+  }
 }
 
 export function saveToken(token: string) {
