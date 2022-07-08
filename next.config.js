@@ -5,6 +5,9 @@ const nextConfig = withSvgr({
   compiler: {
     styledComponents: true,
   },
+  images: {
+    domains: ["dl.airtable.com"],
+  },
   reactStrictMode: true,
 });
 

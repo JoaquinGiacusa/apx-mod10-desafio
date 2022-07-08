@@ -1,13 +1,11 @@
 import { useSerachResult } from "lib/hooks";
-import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { Card } from "ui/card";
-import { BodyText, Large, LargeBolt } from "ui/text";
+import { LargeBolt } from "ui/text";
 import { ResultsContainer, Root, NavegationButton } from "./styled";
 
 export function ResultSearchItems({ query }: any) {
-  // const [offset, setOffset] = useState(0);
   const router = useRouter();
   const { data, isValidating, offset, setOffset } = useSerachResult(query);
   const [products, setProducts]: any = useState(null);

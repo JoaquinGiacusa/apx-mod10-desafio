@@ -7,7 +7,7 @@ import { TextField } from "ui/textfield";
 import { CompraloLogo } from "ui/icons";
 import { useRouter } from "next/router";
 import { MainLayout } from "components/layout/main-layout";
-import { HomePage } from "components/home-page";
+
 import { SearchItem } from "components/seracher";
 import { FeaturedProds } from "components/featured-product";
 

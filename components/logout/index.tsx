@@ -10,8 +10,5 @@ export function Logout() {
     router.push("/");
   }
 
-  //   useEffect(() => {
-  //   });
-
   return <div></div>;
 }

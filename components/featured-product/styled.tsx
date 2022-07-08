@@ -2,15 +2,10 @@ import styled from "styled-components";
 
 export const Root = styled.section`
   width: 100%;
-  /* text-align: center; */
   background-color: #e7e7e7;
   padding: 2em;
 
   .cards-container {
-    /* display: grid;
-    gap: 30px;
-    width: 100%; */
-    /* margin: 0 auto; */
     display: grid;
     gap: 2em;
     justify-content: center;

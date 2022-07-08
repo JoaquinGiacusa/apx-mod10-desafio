@@ -1,7 +1,4 @@
-import Link from "next/link";
 import styled from "styled-components";
-import { CompraloLogo } from "ui/icons";
-import { MenuBurger } from "ui/icons";
 import { BaseButton } from "ui/button";
 
 export const Root = styled.header`

@@ -6,16 +6,13 @@ export function CheckoutPay() {
   const router = useRouter();
   const { itemId } = router.query;
 
-  // CreateBuyOrder(itemId as any).then((res) => {
-  //   router.push(res.url);
-  // });
-  async function test() {
+  async function RedirectPay() {
     const res = await CreateBuyOrder(itemId as any);
     router.push(res.url);
   }
 
   useEffect(() => {
-    test();
+    RedirectPay();
   });
 
   return <div>CheckoutPay</div>;

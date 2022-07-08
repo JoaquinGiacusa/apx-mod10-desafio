@@ -1,4 +1,4 @@
-import { wrap } from "module";
+import Image from "next/image";
 import styled from "styled-components";
 import { Large, LargeBolt } from "ui/text";
 import { FlechaCard } from "ui/icons";
@@ -47,7 +47,14 @@ export function Card({
   return (
     <CardContainer onClick={onClick}>
       <div>
-        <ProductImage src={imageURL} alt={imageDescription} />
+        <Image
+          src={imageURL}
+          alt={imageDescription}
+          width="256px"
+          height="256px"
+          style={{ display: "block" }}
+          layout="responsive"
+        />
         <div
           style={{
             padding: "0.5em",

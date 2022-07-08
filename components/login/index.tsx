@@ -45,7 +45,6 @@ export function Login() {
         setError(true);
       }
     } catch (error: any) {
-      //guardar el error en un state y mostrarlo en la pantalla
       console.log(error.message);
     }
   }

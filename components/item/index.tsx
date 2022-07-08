@@ -4,15 +4,21 @@ import { Root } from "./styled";
 import { BodyText, PriceText, SubTitle, TitlePage } from "ui/text";
 import { BuyButton } from "ui/button";
 import { useRouter } from "next/router";
+import { getSaveToken } from "lib/api";
 
 export function Item({ itemId }: any) {
   const router = useRouter();
   const data = useProduct(itemId);
+  const token = getSaveToken();
 
   const imageUrl = data?.Images[0].url;
 
   function handleBuy() {
-    router.push("/checkout/" + itemId);
+    if (token) {
+      router.push("/checkout/" + itemId);
+    } else {
+      window.alert("Debes iniciar sesión para realizar una compra!");
+    }
   }
 
   return (

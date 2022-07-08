@@ -6,8 +6,6 @@ import { PrimaryButton, SecondaryButton } from "ui/button";
 import { RootForm } from "./styled";
 
 export function SearchItem() {
-  // const [search, setSearch] = useState("");
-
   const router = useRouter();
   const {
     register,
@@ -19,11 +17,6 @@ export function SearchItem() {
   function submitHandler(data: any) {
     router.push("/search?q=" + data.search + "&limit=4&offset=0");
   }
-
-  // const name = watch("nombre");
-  // if (name?.length > 3) {
-  //   console.log("tiene muchas letras");
-  // }
 
   return (
     <RootForm onSubmit={handleSubmit(submitHandler)}>
