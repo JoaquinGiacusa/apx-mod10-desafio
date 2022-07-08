@@ -6,14 +6,12 @@ import { fetchAPI } from "./api";
 import { getSaveToken } from "./api";
 
 export function useSerachResult(query: any) {
-  // const [isLoading, setIsLoading] = useState(true);
   const [offset, setOffset] = useState(0);
 
   useEffect(() => {
     setOffset(0);
   }, [query]);
 
-  console.log({ offset });
   const { data, error, isValidating } = useSWRImmutable(
     () => "/search?q=" + query + "&limit=4&offset=" + offset,
     fetchAPI

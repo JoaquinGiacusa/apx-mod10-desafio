@@ -37,7 +37,6 @@ export function Profile() {
   }, [data]);
 
   function handleForm(data: any) {
-    console.log(data);
     const fullName = data.name;
     const name = fullName.split(" ")[0];
     const lastName = fullName.split(" ")[1];

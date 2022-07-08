@@ -23,7 +23,6 @@ export async function fetchAPI(input: RequestInfo, options?: any) {
   }
 
   const res = await fetch(url, newOptions);
-  console.log(res.status);
 
   if (res.status >= 200 && res.status < 300) {
     return await res.json();
@@ -31,11 +30,6 @@ export async function fetchAPI(input: RequestInfo, options?: any) {
     return { message: "Hubo un error", status: res.status };
   }
 }
-
-// export async function auth(email: string, code: string) {
-//   fetchAPI("/auth", {});
-//   return true;
-// }
 
 export async function sendCode(email: string) {
   return fetchAPI("/auth", { method: "POST", body: { email } });

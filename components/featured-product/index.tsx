@@ -13,7 +13,6 @@ export function FeaturedProds(data: any) {
       </div>
       <div className="cards-container">
         {data?.products?.results.map((p: any) => {
-          // console.log(p);
           return (
             <Card
               onClick={() => {

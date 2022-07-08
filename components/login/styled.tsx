@@ -5,6 +5,7 @@ import { Tiny } from "ui/text";
 export const Root = styled.section`
   /* margin: 0 auto;
   padding: 1em; */
+  height: 25em;
 `;
 
 export const FormLogin = styled(FormBase)`
