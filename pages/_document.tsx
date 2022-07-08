@@ -1,5 +1,9 @@
 import { ServerStyleSheet } from "styled-components";
-import Document, { DocumentContext, DocumentInitialProps } from "next/document";
+import Document, {
+  DocumentContext,
+  DocumentInitialProps,
+  Html,
+} from "next/document";
 import { Fragment } from "react";
 
 export default class MyDocument extends Document {
@@ -22,7 +26,9 @@ export default class MyDocument extends Document {
         ...initialProps,
         styles: [
           <Fragment key={"1"}>
-            <link rel="icon" href="/cartIcon.svg" />
+            <Html lang="es">
+              <link rel="icon" href="/cartIcon.svg" />
+            </Html>
 
             {initialProps.styles}
             {sheet.getStyleElement()}

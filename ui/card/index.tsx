@@ -50,8 +50,8 @@ export function Card({
         <Image
           src={imageURL}
           alt={imageDescription}
-          width="256px"
-          height="256px"
+          width={100}
+          height={100}
           style={{ display: "block" }}
           layout="responsive"
         />
