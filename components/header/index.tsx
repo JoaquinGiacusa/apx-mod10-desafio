@@ -78,12 +78,12 @@ export function MainHeader({ searcher }: MainHeaderProps) {
           </div>
           <ul className={"nav-menu"}>
             <li className={"nav-item"}>
-              <Link href={"/signin"}>
+              <Link href={token ? "profile" : "/signin"}>
                 <LinkStyled>Ingresar</LinkStyled>
               </Link>
             </li>
             <li className={"nav-item"}>
-              <Link href={"/profile"}>
+              <Link href={token ? "profile" : "/signin"}>
                 <LinkStyled>Mi perfil</LinkStyled>
               </Link>
             </li>

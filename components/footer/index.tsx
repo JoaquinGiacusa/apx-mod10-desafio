@@ -3,18 +3,21 @@ import { BodyText } from "ui/text";
 import { Root } from "./styled";
 import { InstaLogo } from "ui/icons";
 import { TwitterLogo } from "ui/icons";
+import { getSaveToken } from "lib/api";
 
 export function Footer() {
+  const token = getSaveToken();
+
   return (
     <Root>
       <div>
         <nav>
           <ul>
             <li>
-              <Link href={"/signin"}>Ingresar</Link>
+              <Link href={token ? "profile" : "/signin"}>Ingresar</Link>
             </li>
             <li>
-              <Link href={"/profile"}>Mi perfil</Link>
+              <Link href={token ? "/profile" : "/signin"}>Mi perfil</Link>
             </li>
             <li>
               <Link href={"/"}>Buscar</Link>
