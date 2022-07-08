@@ -23,7 +23,7 @@ const Home: NextPage = (data: any) => {
       <Head>
         <title>Compralo</title>
         <meta
-          name="descripción"
+          name="description"
           content="Mi E-commerce creado con Next.js y React.js para dar fin al modulo 10 de la carrera de APX"
         ></meta>
       </Head>
