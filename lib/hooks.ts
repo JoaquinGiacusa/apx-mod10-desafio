@@ -23,7 +23,8 @@ export function useSerachResult(query: any) {
 }
 
 export function useMe() {
-  const { data, error } = useSWR("/me", fetchAPI);
+  const token = getSaveToken();
+  const { data, error } = useSWR(token ? "/me" : null, fetchAPI);
 
   return { data };
 }
